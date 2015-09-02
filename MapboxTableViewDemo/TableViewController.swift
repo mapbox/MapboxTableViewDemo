@@ -63,7 +63,7 @@ class TableViewController: UITableViewController {
 
         map.setCenterCoordinate(points[indexPath.row], zoomLevel: 12, animated: false)
 
-        println("cell: \(indexPath.row), total maps: \(totalMaps)")
+        println("cell: \(indexPath.row) of \(self.tableView(tableView, numberOfRowsInSection: 0)), total maps: \(totalMaps)")
 
         return cell
     }
