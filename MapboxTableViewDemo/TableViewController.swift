@@ -4,15 +4,25 @@ import Mapbox
 class TableViewController: UITableViewController {
 
     let identifier = "MapboxCell"
-    var maxMapCount: UInt!
-    var maps = [MGLMapView]()
+    var points = [CLLocationCoordinate2D]()
+    var totalMaps = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.registerClass(NSClassFromString("UITableViewCell"), forCellReuseIdentifier: identifier)
 
-        maxMapCount = UInt(view.bounds.size.height / tableView(tableView, heightForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))) + 2
+        if let path = NSBundle.mainBundle().pathForResource("airports", ofType: "geojson"),
+           let geojson = NSData(contentsOfFile: path),
+           let airports = NSJSONSerialization.JSONObjectWithData(geojson, options: nil, error: nil) as? NSDictionary,
+           let features = airports["features"] as? [NSDictionary] {
+            for feature in features {
+                if let geometry = feature["geometry"] as? NSDictionary,
+                   let coordinates = geometry["coordinates"] as? [Double] {
+                    points.append(CLLocationCoordinate2D(latitude: coordinates[1], longitude: coordinates[0]))
+                }
+            }
+        }
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -35,27 +45,25 @@ class TableViewController: UITableViewController {
 
             cell.layer.borderColor = UIColor.redColor().colorWithAlphaComponent(0.5).CGColor
             cell.layer.borderWidth = 10
-
-            var map: MGLMapView?
-
-            for existingMap in maps {
-                let mapRect = existingMap.convertRect(existingMap.frame, toView: view)
-                if CGRectIntersection(mapRect, view.frame) == CGRectNull {
-                    map = existingMap
-                    println("reused existing map for row \(indexPath.row)")
-                }
-            }
-
-            if map == nil {
-                let map = MGLMapView(frame: cell.bounds)
-                map.logoView.hidden = true
-                map.attributionButton.hidden = true
-                map.userInteractionEnabled = false
-                cell.addSubview(map)
-                maps.append(map)
-                println("made new map \(maps.count - 1) for row \(indexPath.row)")
-            }
         }
+
+        var map: MGLMapView!
+
+        if let existingMap = cell.viewWithTag(1) {
+            map = existingMap as! MGLMapView
+        } else {
+            map = MGLMapView(frame: cell.bounds)
+            map.logoView.hidden = true
+            map.attributionButton.hidden = true
+            map.userInteractionEnabled = false
+            map.tag = 1
+            cell.addSubview(map)
+            totalMaps++
+        }
+
+        map.setCenterCoordinate(points[indexPath.row], zoomLevel: 12, animated: false)
+
+        println("cell: \(indexPath.row), total maps: \(totalMaps)")
 
         return cell
     }
