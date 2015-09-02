@@ -17,4 +17,8 @@ Reference implementation of reuse of `UITableViewCell` objects containing Mapbox
 - Performant on device (tested with an iPhone 5s running iOS 8.4.1).
 - Data courtesy [`geoiq/gc_data`](https://github.com/geoiq/gc_data/blob/master/datasets/10.geojson).
 
+[Video](./video.mp4)
+
+![](./screenshot.png)
+
 ![](./sample.png)
