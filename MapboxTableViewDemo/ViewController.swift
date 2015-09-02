@@ -1,11 +1,12 @@
 import UIKit
+import Mapbox
 
 class ViewController: UIViewController {
                             
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.whiteColor()
+        view.addSubview(MGLMapView(frame: view.bounds))
     }
 
 }
