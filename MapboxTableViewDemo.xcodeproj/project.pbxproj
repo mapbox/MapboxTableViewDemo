@@ -11,6 +11,7 @@
 		DD885EFC1B96B045006994C4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD885EFB1B96B045006994C4 /* Settings.bundle */; };
 		DD885EFE1B96B116006994C4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD885EFD1B96B116006994C4 /* TableViewController.swift */; };
 		DD885F021B96BF9D006994C4 /* airports.geojson in Resources */ = {isa = PBXBuildFile; fileRef = DD885F011B96BF9D006994C4 /* airports.geojson */; };
+		DD885F321B96C3EB006994C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD885F311B96C3EB006994C4 /* LaunchScreen.xib */; };
 		E6A63B72EFAA6654302A7AFC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085C068CF12B47FEE40EBE7 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		DD885EFB1B96B045006994C4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DD885EFD1B96B116006994C4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		DD885F011B96BF9D006994C4 /* airports.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airports.geojson; sourceTree = "<group>"; };
+		DD885F311B96C3EB006994C4 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				DD71EEEC19BA64BA00D68BB1 /* Info.plist */,
+				DD885F311B96C3EB006994C4 /* LaunchScreen.xib */,
 				DD885EFB1B96B045006994C4 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD885F021B96BF9D006994C4 /* airports.geojson in Resources */,
+				DD885F321B96C3EB006994C4 /* LaunchScreen.xib in Resources */,
 				DD885EFC1B96B045006994C4 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
