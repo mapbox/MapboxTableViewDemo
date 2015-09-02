@@ -1,4 +1,5 @@
 import UIKit
+import Mapbox
 
 class TableViewController: UITableViewController {
 
@@ -27,6 +28,15 @@ class TableViewController: UITableViewController {
 
         if let reusableCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as? UITableViewCell {
             cell = reusableCell
+
+            cell.layer.borderColor = UIColor.redColor().colorWithAlphaComponent(0.5).CGColor
+            cell.layer.borderWidth = 10
+
+            let map = MGLMapView(frame: cell.bounds)
+            map.logoView.hidden = true
+            map.attributionButton.hidden = true
+            map.userInteractionEnabled = false
+            cell.addSubview(map)
         } else {
             cell = UITableViewCell(style: .Default, reuseIdentifier: identifier)
         }
