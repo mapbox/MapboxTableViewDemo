@@ -41,8 +41,6 @@ class TableViewController: UITableViewController {
             cell = UITableViewCell(style: .Default, reuseIdentifier: identifier)
         }
 
-        cell.textLabel!.text = "Cell \(indexPath.row)"
-
         return cell
     }
 
