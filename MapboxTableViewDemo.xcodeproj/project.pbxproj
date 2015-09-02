@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DD71EEEE19BA64BA00D68BB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71EEED19BA64BA00D68BB1 /* AppDelegate.swift */; };
-		DD71EEF019BA64BA00D68BB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71EEEF19BA64BA00D68BB1 /* ViewController.swift */; };
 		DD885EFC1B96B045006994C4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD885EFB1B96B045006994C4 /* Settings.bundle */; };
+		DD885EFE1B96B116006994C4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD885EFD1B96B116006994C4 /* TableViewController.swift */; };
 		E6A63B72EFAA6654302A7AFC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085C068CF12B47FEE40EBE7 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -20,8 +20,8 @@
 		DD71EEE819BA64BA00D68BB1 /* MapboxTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapboxTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD71EEEC19BA64BA00D68BB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD71EEED19BA64BA00D68BB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD71EEEF19BA64BA00D68BB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD885EFB1B96B045006994C4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		DD885EFD1B96B116006994C4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				DD71EEED19BA64BA00D68BB1 /* AppDelegate.swift */,
-				DD71EEEF19BA64BA00D68BB1 /* ViewController.swift */,
+				DD885EFD1B96B116006994C4 /* TableViewController.swift */,
 				DD71EEEB19BA64BA00D68BB1 /* Supporting Files */,
 			);
 			path = MapboxTableViewDemo;
@@ -209,7 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD71EEF019BA64BA00D68BB1 /* ViewController.swift in Sources */,
+				DD885EFE1B96B116006994C4 /* TableViewController.swift in Sources */,
 				DD71EEEE19BA64BA00D68BB1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
